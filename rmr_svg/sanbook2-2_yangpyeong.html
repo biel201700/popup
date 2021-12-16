@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="sanbook2-2_yangpyeong.css" rel="stylesheet" type="text/css" />
+    <title>고속국도 600호선 양평-이천 4공구</title>
+</head>
+
+<body>
+    <div class="line">
+        <svg x="0" y="0" width="1350" height="650" xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg">
+            <text fill="#000000" stroke="#000000" stroke-width="2" x="460" y="50" font-size="35">산북2-2터널 양평방향</text>
+            <defs>
+                <rect id="rect" x="95" y="70" width="1050" height="490" rx="15" ry="15" />
+                <clipPath id="clip">
+                    <use xlink:href="#rect" />
+                </clipPath>
+                <filter id="shadow-filter" x="0" y="0" width="200%" height="200%">
+                    <feOffset result="offOut" in="SourceGraphic" dx="25" dy="25" />
+                    <feColorMatrix result="matrixOut" in="offOut" type="matrix"
+                        values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0" />
+                    <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="9" />
+                    <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+                </filter>
+            </defs>
+            <use xlink:href="#rect" stroke-weight="0.5" fill="#ffffff" filter="url(#shadow-filter)" />
+            <image xlink:href="taeyoung_tunnel.png" x="95" y="70" width="1200" height="597" clip-path="url(#clip)"
+                onclick="self.close();"></image>
+            <g>
+                <image xlink:href="pin.png" x="160" y="210" width="30" height="30"></image>
+                <text class="neonText" fill="#ffffff" x="150" y="265">이천</text>
+            </g>
+            <g>
+                <image xlink:href="pin.png" x="1030" y="480" width="30" height="30"></image>
+                <text class="neonText" fill="#ffffff" x="1020" y="535" font-size="24">양평</text>
+            </g>
+            <path id="curve" class="curve_line_s2-2yangpyeong"
+                d="M1010 503, 983 500, 933 493, 901 489, 867 484, 817 474" />
+
+        </svg>
+    </div>
+    <!-- 좌표 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous">
+        </script>
+    <script>
+
+        $(document).on('click', 'body', function (e) {
+            console.log(e.offsetX);
+            console.log(e.offsetY);
+        });
+
+    </script>
+</body>
+
+</html>
