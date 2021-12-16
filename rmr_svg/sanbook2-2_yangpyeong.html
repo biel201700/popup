@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="sanbook2-2_yangpyeong.css" rel="stylesheet" type="text/css" />
-    <title>고속국도 600호선 양평-이천 4공구</title>
 </head>
 
 <body>
@@ -38,9 +37,13 @@
                 <image xlink:href="pin.png" x="1030" y="480" width="30" height="30"></image>
                 <text class="neonText" fill="#ffffff" x="1020" y="535" font-size="24">양평</text>
             </g>
-            <path id="curve" class="curve_line_s2-2yangpyeong"
+            <path id="curvePath" class="curve_line_s2-2yangpyeong"
                 d="M1010 503, 983 500, 933 493, 901 489, 867 484, 817 474" />
-
+                <text x="25">
+                    <textPath xlink:href="#curvePath" class="neonText" >
+                        산북1터널
+                    </textPath>
+                </text>
         </svg>
     </div>
     <!-- 좌표 -->

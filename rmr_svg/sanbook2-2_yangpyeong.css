@@ -17,6 +17,12 @@ image{
     font-weight: bold;
     font-size: 25px;
 }
+textPath{
+    font-size: 9px;
+    text-align: center;
+    font-family: 'Nanum Pen Script', cursive;
+    font-weight: 10;
+}
 @keyframes pulsate { 
     100% { 
         text-shadow: 

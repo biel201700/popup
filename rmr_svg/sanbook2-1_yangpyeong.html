@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="sanbook2-1_yangpyeong.css" rel="stylesheet" type="text/css" />
-    <title>고속국도 600호선 양평-이천 4공구</title>
 </head>
 <body>
     <div class="line">
@@ -26,8 +25,9 @@
                 </filter>
             </defs>
             <use xlink:href="#rect" stroke-weight="0.5" fill="#ffffff" filter="url(#shadow-filter)" />
-            <image xlink:href="taeyoung_tunnel.png" x="95" y="70" width="1200" height="597" clip-path="url(#clip)"
-                onclick="self.close();">
+            <!-- <image xlink:href="taeyoung_tunnel.png" x="95" y="70" width="1200" height="597" clip-path="url(#clip)"
+                onclick="self.close();"> -->
+                <image xlink:href="taeyoung_tunnel.png" x="95" y="70" width="1200" height="597" clip-path="url(#clip)">
             </image>
             <g>
                 <image xlink:href="pin.png" x="160" y="210" width="30" height="30"></image>
@@ -37,8 +37,16 @@
                 <image xlink:href="pin.png" x="1030" y="480" width="30" height="30"></image>
                 <text class="neonText" fill="#ffffff" x="1020" y="535" font-size="24">양평</text>
             </g>
-            <path id="curve" class="curve_line_s2-1yangpyeong"
-                d="M630 420, 664 432, 685 439, 704 444, 725 450, 754 458, 787 466, 809 472" />
+            <!-- <path id="curve" class="curve_line_s2-1yangpyeong"
+                d="M630 420, 664 432, 685 439, 704 444, 725 450, 754 458, 787 466, 809 472" /> -->
+                <path id="curvePath" class="curve_line_s2-1yangpyeong"
+                d="M649 411, 666 416, 683 422, 698 425, 712 429, 729 434, 740 437, 757 441, 774 445, 792 448,
+                807 451, 819 453" />
+                <text x="15">
+                    <textPath xlink:href="#curvePath" class="neonText">
+                        산북2-1터널
+                    </textPath>
+                </text>
         </svg>
     </div>
     <!-- 좌표 -->

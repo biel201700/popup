@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="sanbook1_ichon.css" rel="stylesheet" type="text/css" />
-    <title>고속국도 600호선 양평-이천 4공구</title>
 </head>
+
 <body>
     <div class="line">
         <svg x="0" y="0" width="1350" height="650" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -26,8 +27,9 @@
                 </filter>
             </defs>
             <use xlink:href="#rect" stroke-weight="0.5" fill="#ffffff" filter="url(#shadow-filter)" />
-            <image xlink:href="taeyoung_tunnel.png" x="95" y="70" width="1200" height="597" clip-path="url(#clip)"
-                onclick="self.close();">
+            <!-- <image xlink:href="taeyoung_tunnel.png" x="95" y="70" width="1200" height="597" clip-path="url(#clip)"
+                onclick="self.close();"> -->
+                <image xlink:href="taeyoung_tunnel.png" x="95" y="70" width="1200" height="597" clip-path="url(#clip)">
             </image>
             <g>
                 <image xlink:href="pin.png" x="160" y="210" width="30" height="30"></image>
@@ -37,8 +39,15 @@
                 <image xlink:href="pin.png" x="1030" y="480" width="30" height="30"></image>
                 <text class="neonText" fill="#ffffff" x="1020" y="535" font-size="24">양평</text>
             </g>
-            <path class="curve_line_s1ichon"
-                d="M477 305, 466 293, 454 284, 442 279, 400 268, 350 260, 298 251, 245 245, 217 242" />
+            <path id="curvePath" class="curve_line_s1ichon"
+                d="M473 269, 480 272, 467 261, 440 255, 421 249, 406 243, 389 239, 372 233, 352 229, 328 226, 303 221, 274 216, 242 214, 216 212, 205 212" />
+                <path id="curvePath2" class="curve_line_s1ichon" style="display:none;"
+                d="M205 212, 480 272, 467 261, 440 255, 421 249, 406 243, 389 239, 372 233, 352 229, 328 226, 303 221, 274 216, 242 214, 216 212, 473 269" />
+            <text x="25">
+                <textPath xlink:href="#curvePath2" class="neonText" >
+                    산북1터널
+                </textPath>
+            </text>
         </svg>
     </div>
     <!-- 좌표 -->

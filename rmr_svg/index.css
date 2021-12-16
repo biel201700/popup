@@ -41,7 +41,6 @@ input:checked + .slider:before {
     -ms-transform: translateX(26px);
     transform: translateX(26px);
 }
-  /* Rounded sliders */
 .slider.round {
     border-radius: 34px;
 }
@@ -53,4 +52,34 @@ p {
     display:inline-block;
     font-size:10px;
     font-weight:bold;
+}
+#san1_i{
+    position:absolute;
+    top: 30%;
+    left: 40.3%;
+}
+#san1_y{
+    position: absolute;
+    top: 30%;
+    left: 50.2%;
+}
+#san2-1_i{
+    position: absolute;
+    top: 35%;
+    left: 40%;
+}
+#san2-1_y{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+}
+#san2-2_i{
+    position: absolute;
+    top: 40%;
+    left: 40%;
+}
+#san2-2_y{
+    position: absolute;
+    top: 40%;
+    left: 50%;   
 }

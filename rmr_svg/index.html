@@ -15,9 +15,9 @@
 </head>
 
 <body>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">눌러주세요</button>
+    <button type="button" id="san1_i" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">산북1터널 이천방향</button>
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document" style="width:auto;height:auto;display:table;">
             <div class="modal-content">
                 <div class="modal-header">
@@ -25,6 +25,93 @@
                 </div>
                 <div class="modal-body">
                     <iframe  width="1200" height="610" frameborder="0" src="sanbook1_ichon.html">
+                    </iframe>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" id="san1_y" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">산북1터널 양평방향</button>
+
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document" style="width:auto;height:auto;display:table;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">산북1터널 양평방향</h3>
+                </div>
+                <div class="modal-body">
+                    <iframe  width="1200" height="610" frameborder="0" src="sanbook1_yangpyeong.html">
+                    </iframe>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" id="san2-1_i"class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3">산북2-1터널 이천방향</button>
+
+    <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document" style="width:auto;height:auto;display:table;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">산북2-1터널 이천방향</h3>
+                </div>
+                <div class="modal-body">
+                    <iframe  width="1200" height="610" frameborder="0" src="sanbook2-1_ichon.html">
+                    </iframe>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" id="san2-1_y"class="btn btn-primary" data-toggle="modal" data-target="#exampleModal4">산북2-1터널 양평방향</button>
+    <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document" style="width:auto;height:auto;display:table;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">산북2-1터널 양평방향</h3>
+                </div>
+                <div class="modal-body">
+                    <iframe  width="1200" height="610" frameborder="0" src="sanbook2-1_yangpyeong.html">
+                    </iframe>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" id="san2-2_i"class="btn btn-primary" data-toggle="modal" data-target="#exampleModal5">산북2-2터널 이천방향</button>
+    <div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document" style="width:auto;height:auto;display:table;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">산북2-2터널 이천방향</h3>
+                </div>
+                <div class="modal-body">
+                    <iframe  width="1200" height="610" frameborder="0" src="sanbook2-2_ichon.html">
+                    </iframe>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" id="san2-2_y"class="btn btn-primary" data-toggle="modal" data-target="#exampleModal6">산북2-2터널 양평방향</button>
+    <div class="modal fade" id="exampleModal6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document" style="width:auto;height:auto;display:table;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">산북2-2터널 양평방향</h3>
+                </div>
+                <div class="modal-body">
+                    <iframe  width="1200" height="610" frameborder="0" src="sanbook2-2_yangpyeong.html">
                     </iframe>
                 </div>
                 <div class="modal-footer">
@@ -66,8 +153,8 @@
 
     <script language="javascript">
         // 산북1터널 이천방향
-        // var el = document.getElementById("s1_ichon");
-        // el.addEventListener("change", showPopup1, false);
+        var el = document.getElementById("s1_ichon");
+        el.addEventListener("change", showPopup1, false);
         // 산북1터널 양평방향
         var el = document.getElementById("s1_yangpyeong");
         el.addEventListener("change", showPopup2, false);
@@ -85,32 +172,32 @@
         el.addEventListener("change", showPopup6, false);
         // 산북2-2터널 양평방향 
 
-        // function showPopup1(e) {
-        //     console.log(e.target.checked);
-        //     if (e.target.checked == true) {
+        function showPopup1(e) {
+            console.log(e.target.checked);
+            if (e.target.checked == true) {
 
-        //         var targetTitle = "popup";
-        //         var popupWidth = 1300;
-        //         var popupHeight = 700;
+                var targetTitle = "popup";
+                var popupWidth = 1300;
+                var popupHeight = 700;
 
-        //         var left = (screen.availWidth - popupWidth) / 2;
-        //         if (window.screenLeft < 0) {
-        //             left += window.screen.width * -1;
-        //         }
-        //         else if (window.screenLeft > window.screen.width) {
-        //             left += window.screen.width;
-        //         }
+                var left = (screen.availWidth - popupWidth) / 2;
+                if (window.screenLeft < 0) {
+                    left += window.screen.width * -1;
+                }
+                else if (window.screenLeft > window.screen.width) {
+                    left += window.screen.width;
+                }
 
-        //         var top = (screen.availHeight - popupHeight) / 2 - 10;
+                var top = (screen.availHeight - popupHeight) / 2 - 10;
 
-        //         var url = "sanbook1_ichon.html";
-        //         var options = 'left=' + left + ',top=' + top + ', width=' + popupWidth + ',height=' + popupHeight + ',menubar=no, status=no, toolbar=no, location=no, scrollbars=yes';
-        //         var my_window = window.open(url, targetTitle, options);
-        //     }
-        //     else if (e.target.checked == false) {
-        //         my_window.close();
-        //     }
-        // }
+                var url = "sanbook1_ichon.html";
+                var options = 'left=' + left + ',top=' + top + ', width=' + popupWidth + ',height=' + popupHeight + ',menubar=no, status=no, toolbar=no, location=no, scrollbars=yes';
+                var my_window = window.open(url, targetTitle, options);
+            }
+            else if (e.target.checked == false) {
+                my_window.close();
+            }
+        }
         function showPopup2(e) {
             console.log(e.target.checked);
             if (e.target.checked == true) {

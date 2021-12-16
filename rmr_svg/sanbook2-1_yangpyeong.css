@@ -11,6 +11,12 @@ image{
     top:63%;
     left:77%;
 }
+textPath{
+    font-size: 9px;
+    text-align: center;
+    font-family: 'Nanum Pen Script', cursive;
+    font-weight: 10;
+}
 .neonText{
     animation: pulsate 0.5s infinite alternate;
     color:#fff;
@@ -54,7 +60,7 @@ image{
 }
 .line svg path{
     fill-opacity: 0;
-    stroke-width: 22;
+    stroke-width: 15;
     stroke-linecap: round;
     stroke-dasharray: 870;
     stroke-dashoffset: 870;
