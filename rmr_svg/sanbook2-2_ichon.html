@@ -12,36 +12,32 @@
     <div class="line">
         <svg x="0" y="0" width="1350" height="650" xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns="http://www.w3.org/2000/svg">
-            <text fill="#000000" stroke="#000000" stroke-width="2" x="460" y="50" font-size="35">산북2-2터널 이천방향</text>
+            <text fill="#000000" stroke="#000000" stroke-width="2" x="427" y="53" font-size="35">산북2-2터널 이천방향</text>
             <defs>
-                <rect id="rect" x="95" y="70" width="1050" height="490" rx="15" ry="15" />
+                <rect id="rect"  x="70" y="80" width="1050" height="490" rx="15" ry="15" />
                 <clipPath id="clip">
                     <use xlink:href="#rect" />
                 </clipPath>
-                <filter id="shadow-filter" x="0" y="0" width="200%" height="200%">
-                    <feOffset result="offOut" in="SourceGraphic" dx="25" dy="25" />
-                    <feColorMatrix result="matrixOut" in="offOut" type="matrix"
-                        values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0" />
-                    <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="9" />
-                    <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
-                </filter>
             </defs>
-            <use xlink:href="#rect" stroke-weight="0.5" fill="#ffffff" filter="url(#shadow-filter)" />
-            <image xlink:href="taeyoung_tunnel.png" x="95" y="70" width="1200" height="597" clip-path="url(#clip)"
+            <use xlink:href="#rect" stroke-weight="0.5" fill="#ffffff"/>
+            <image xlink:href="taeyoung_tunnel.png"  x="70" y="80" width="1200" height="597" clip-path="url(#clip)"
                 onclick="self.close();">
             </image>
             <g>
-                <image xlink:href="pin.png" x="160" y="210" width="30" height="30"></image>
-                <text class="neonText" fill="#ffffff" x="150" y="265">이천</text>
+                <image xlink:href="pin.png" x="160" y="220" width="30" height="30"></image>
+                <text class="neonText" fill="#ffffff" x="150" y="275">이천</text>
             </g>
             <g>
-                <image xlink:href="pin.png" x="1030" y="480" width="30" height="30"></image>
-                <text class="neonText" fill="#ffffff" x="1020" y="535" font-size="24">양평</text>
+                <image xlink:href="pin.png" x="1030" y="490" width="30" height="30"></image>
+                <text class="neonText" fill="#ffffff" x="1020" y="545" font-size="24">양평</text>
             </g>
-            <path id="curvePath" class="curve_line_s2-2ichon" d="M1010 503, 983 500, 933 493, 901 489, 867 484, 817 474" />
-            <text x="25">
-                <textPath xlink:href="#curvePath" class="neonText" >
-                    산북1터널
+            <path id="curvePath" class="curve_line_s2-2ichon" 
+            d="M1014 481, 969 479, 932 477, 902 471, 897 472, 872 467, 852 463, 818 454" />
+            <path id="curvePath2" class="curve_line_s2-2ichon" style="display: none;"
+            d="M842 469, 872 476, 902 481, 926 485, 953 489, 981 490, 1014 489" />
+            <text x="5">
+                <textPath xlink:href="#curvePath2" class="neonText" >
+                    산북2-2터널
                 </textPath>
             </text>
         </svg>

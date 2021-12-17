@@ -11,17 +11,15 @@ image{
     top:63%;
     left:77%;
 }
+textPath{
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 25px;
+}
 .neonText{
     animation: pulsate 0.5s infinite alternate;
     color:#fff;
     font-weight: bold;
     font-size: 25px;
-}
-textPath{
-    font-size: 9px;
-    text-align: center;
-    font-family: 'Nanum Pen Script', cursive;
-    font-weight: 10;
 }
 @keyframes pulsate { 
     100% { 
