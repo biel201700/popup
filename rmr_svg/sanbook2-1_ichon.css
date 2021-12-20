@@ -1,18 +1,8 @@
 image{
     filter: drop-shadow(3px 5px 2px #fff);
 }
-#text_ichon{
-    position:fixed;
-    top:32%;
-    left:9%;
-}
-#text_yangpyeong{
-    position:fixed;
-    top:63%;
-    left:77%;
-}
 textPath{
-    font-family: 'Nanum Pen Script', cursive; 
+    font-family: 'Nanum Pen Script', cursive;
 }
 .neonText{
     animation: pulsate 0.5s infinite alternate;
@@ -36,24 +26,20 @@ textPath{
     } 
 } 
 #pin1{
-    position:fixed;
+    position: fixed;
     width: 20px;
     height: 20px;
-    top:29%;
-    left:10%;
 }
 #pin2{
-    position:fixed;
+    position: fixed;
     width: 20px;
     height: 20px;
-    top:60%;
-    left:78%;
 }
 .line{
     position: fixed;
     width: 100%;
-    height:0;
-    top:0;
+    height: 0;
+    top: 0;
 }
 .line svg path{
     fill-opacity: 0;
@@ -62,7 +48,7 @@ textPath{
     stroke-dasharray: 870;
     stroke-dashoffset: 870;
     animation-name: draw;
-    animation-duration: 5s;
+    animation-duration: 6s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
