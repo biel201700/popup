@@ -1,9 +1,6 @@
 image{
     filter: drop-shadow(3px 5px 2px #fff);
 }
-textPath{
-    font-family: 'Nanum Pen Script', cursive;
-}
 .neonText{
     animation: pulsate 0.5s infinite alternate;
     color:#fff;
@@ -48,7 +45,7 @@ textPath{
     stroke-dasharray: 870;
     stroke-dashoffset: 870;
     animation-name: draw;
-    animation-duration: 6s;
+    animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }

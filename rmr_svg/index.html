@@ -10,16 +10,119 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>Modal</title>
+    <title>고속국도 양평-이천 4공구</title>
 </head>
 
 <body>
+    <label class="switch">
+        <input type="checkbox" data-value="1">
+        <span class="slider round"></span> 
+    </label>
+    <p>산북1터널 이천방향</p>
+
+    <label class="switch">
+        <input type="checkbox" data-value="2">
+        <span class="slider round"></span>  
+    </label>
+    <p>산북1터널 양평방향</p>
+    <div class="content">
+    </div>
+    <script>
+        $(function () {
+            $('.switch input').off().click(function (e) {
+
+                let value = $(this).attr("data-value")
+                let status = $(this)[0].checked;
+                console.log(value);
+                if (status) {
+                    if (value == 1) {
+                        let image = `<div class="line">
+         <svg x="0" y="0" width="1350" height="650" xmlns:xlink="http://www.w3.org/1999/xlink"
+             xmlns="http://www.w3.org/2000/svg">
+             <!-- <text fill="#000000" stroke="#000000" stroke-width="2" x="430" y="60" font-size="35">산북1터널 이천방향</text> -->
+             <defs>
+                 <rect id="rect" x="120" y="100" width="950" height="480" rx="15" ry="15" />
+                 <clipPath id="clip">
+                     <use xlink:href="#rect" />
+                 </clipPath>
+             </defs>
+             <use xlink:href="#rect" stroke-weight="0.5" fill="#ffffff" />
+             <image xlink:href="taeyoung_tunnel.png" x="120" y="100" width="1000" height="500" clip-path="url(#clip)">
+             </image>
+             <g>
+                 <image xlink:href="pin.png" x="160" y="207" width="30" height="30"></image>
+                 <text class="neonText" fill="#ffffff" x="150" y="265">이천</text>
+             </g>
+             <g>
+                 <image xlink:href="pin.png" x="970" y="340" width="30" height="30"></image>
+                 <text class="neonText" fill="#ffffff" x="960" y="400" font-size="24">양평</text>
+             </g>
+             <path id="curvePath" 
+                 d="M403 244, 389 241, 364 236, 336 230, 303 226, 264 222, 226 217" />
+             <path id="curvePath2" style='display: none;'
+                 d="M226 217, 403 244" /> 
+             <text x="6">
+                 <textPath xlink:href="#curvePath2" class="neonText" style="font-size: 19px;">
+                     산북1터널 이천방향
+                 </textPath>
+             </text>
+         </svg>
+     </div>`;
+                        $('.content').append(image);
+                    }
+                    if (value == 2) {
+                        let image = `<div class="line">
+         <svg x="0" y="0" width="1350" height="650" xmlns:xlink="http://www.w3.org/1999/xlink"
+             xmlns="http://www.w3.org/2000/svg">
+             <!-- <text fill="#000000" stroke="#000000" stroke-width="2" x="430" y="60" font-size="35">산북1터널 양평방향</text> -->
+             <defs>
+                 <rect id="rect" x="120" y="100" width="950" height="480" rx="15" ry="15" />
+                 <clipPath id="clip">
+                     <use xlink:href="#rect" />
+                 </clipPath>
+             </defs>
+             <use xlink:href="#rect" stroke-weight="0.5" fill="#ffffff" />
+             <image xlink:href="taeyoung_tunnel.png" x="120" y="100" width="1000" height="500" clip-path="url(#clip)">
+             </image>
+             <g>
+                 <image xlink:href="pin.png" x="160" y="207" width="30" height="30"></image>
+                 <text class="neonText" fill="#ffffff" x="150" y="265">이천</text>
+             </g>
+             <g>
+                 <image xlink:href="pin.png" x="970" y="340" width="30" height="30"></image>
+                 <text class="neonText" fill="#ffffff" x="960" y="400">양평</text>
+             </g>
+             <path id="curvePath" 
+                 d="M368 306, 343 298, 317 293, 283 287, 252 281, 216 276 " />
+             <path id="curvePat2"style="display: none;"
+                 d="M216 276, 368 306" />
+             <text x="2">
+                 <textPath xlink:href="#curvePat2" class="neonText" style="font-size: 17px;">
+                     산북1터널 양평방향
+                 </textPath>
+             </text>
+         </svg>
+     </div>`;
+                        $('.content').append(image);
+                    }
+
+                } else {
+                    $('path').remove();
+                }
+            });
+        }); 
+    </script>
+
+
+
+
+
     <!--산북1터널 이천방향-->
-        <label class="switch-button">
-            <input type="checkbox" data-toggle="modal" data-target="#exampleModal1" />
-            <span class="onoff-switch"></span>
-        </label>
-        <p>산북1터널 이천방향</p>
+    <!--<label class="switch-button">
+        <input type="checkbox" data-toggle="modal" data-target="#exampleModal1" />
+        <span class="onoff-switch"></span>
+    </label>
+    <p>산북1터널 이천방향</p>
     <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document" style="width:auto;height:auto;display:table;">
@@ -35,9 +138,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!--산북1터널 양평방향-->
-    <label class="switch-button">
+    <!-- <label class="switch-button">
         <input type="checkbox" data-toggle="modal" data-target="#exampleModal2" />
         <span class="onoff-switch"></span>
     </label>
@@ -55,9 +158,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
     <!--산북2-1터널 이천방향-->
-    <label class="switch-button">
+    <!-- <label class="switch-button">
         <input type="checkbox" data-toggle="modal" data-target="#exampleModal3" />
         <span class="onoff-switch"></span>
     </label>
@@ -75,9 +178,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!--산북2-1터널 양평방향-->
-    <label class="switch-button">
+    <!--<label class="switch-button">
         <input type="checkbox" data-toggle="modal" data-target="#exampleModal4" />
         <span class="onoff-switch"></span>
     </label>
@@ -95,9 +198,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
     <!--산북2-2터널 이천방향-->
-    <label class="switch-button">
+    <!--<label class="switch-button">
         <input type="checkbox" data-toggle="modal" data-target="#exampleModal5" />
         <span class="onoff-switch"></span>
     </label>
@@ -115,9 +218,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
     <!--산북2-2터널 양평방향-->
-    <label class="switch-button">
+    <!--<label class="switch-button">
         <input type="checkbox" data-toggle="modal" data-target="#exampleModal6" />
         <span class="onoff-switch"></span>
     </label>
@@ -135,7 +238,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
 </body>
 
 </html>
