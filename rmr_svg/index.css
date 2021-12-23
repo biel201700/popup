@@ -1,3 +1,4 @@
+/*toggle*/
 .switch-button { 
     position: relative; 
     display: inline-block; 
@@ -50,16 +51,19 @@ p {
     font-size:12px;
     font-weight:bold;
 }
+.toggle{
+    text-align: center;
+}
+/*image*/
 .content{
     text-align: center;
     margin-left: 10%;
 }
-.toggle{
-    text-align: center;
-}
+/*pin*/
 image{
     filter: drop-shadow(3px 5px 2px #fff);
 }
+/*이천 & 양평*/
 .neonText{
     animation: pulsate 0.5s infinite alternate;
     color:#fff;
@@ -86,25 +90,87 @@ image{
     height: 0;
     top: 0;
 }
-.line svg path{
+.line svg path,#path1{
     fill-opacity: 0;
     stroke-width: 20;
     stroke-linecap: round;
     stroke-dasharray: 870;
     stroke-dashoffset: 870;
-    animation-name: draw;
-    animation-duration: 1s;
+    animation-name: draw1;
+    animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
-@keyframes draw{
+@keyframes draw1{
     to{
         stroke-dashoffset: 0;
     }
     0%{
-        -webkit-filter: drop-shadow(-.75px 0px 6px #00c9fc);
-        filter: drop-shadow(-.75px 0px 6px #00c9fc);
-        stroke: #00c9fc;
+        -webkit-filter: drop-shadow(-.75px 0px 6px #ff5f6d);
+        filter: drop-shadow(-.75px 0px 6px #ff5f6d);
+        stroke: #ff5f6d;
+    }
+    62%{
+        -webkit-filter: drop-shadow(-.75px 0px 6px #ffc371);
+        filter: drop-shadow(-.75px 0px 6px #ffc371);
+        stroke: #ffc371;
+    }
+    92%{
+        -webkit-filter: drop-shadow(-.75px 0px 6px #cee2c7);
+        filter: drop-shadow(-.75px 0px 6px #cee2c7);
+        stroke: #cee2c7;
+    }
+}
+.line svg path,#path3{
+    fill-opacity: 0;
+    stroke-width: 20;
+    stroke-linecap: round;
+    stroke-dasharray: 870;
+    stroke-dashoffset: 870;
+    animation-name: draw2;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes draw2{
+    to{
+        stroke-dashoffset: 0;
+    }
+    0%{
+        -webkit-filter: drop-shadow(-.75px 0px 6px #73c8a9);
+        filter: drop-shadow(-.75px 0px 6px #73c8a9);
+        stroke: #73c8a9;
+    }
+    62%{
+        -webkit-filter: drop-shadow(-.75px 0px 6px #c2e59c);
+        filter: drop-shadow(-.75px 0px 6px #c2e59c);
+        stroke: #c2e59c;
+    }
+    92%{
+        -webkit-filter: drop-shadow(-.75px 0px 6px #cee2c7);
+        filter: drop-shadow(-.75px 0px 6px #cee2c7);
+        stroke: #cee2c7;
+    }
+}
+.line svg path,#path5{
+    fill-opacity: 0;
+    stroke-width: 20;
+    stroke-linecap: round;
+    stroke-dasharray: 870;
+    stroke-dashoffset: 870;
+    animation-name: draw3;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes draw3{
+    to{
+        stroke-dashoffset: 0;
+    }
+    0%{
+        -webkit-filter: drop-shadow(-.75px 0px 6px #fdfc47);
+        filter: drop-shadow(-.75px 0px 6px #fdfc47);
+        stroke: #fdfc47;
     }
     62%{
         -webkit-filter: drop-shadow(-.75px 0px 6px #faf0e6);
@@ -117,3 +183,99 @@ image{
         stroke: #cee2c7;
     }
 }
+.line svg path,#path7{
+    fill-opacity: 0;
+    stroke-width: 20;
+    stroke-linecap: round;
+    stroke-dasharray: 870;
+    stroke-dashoffset: 870;
+    animation-name: draw4;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes draw4{
+    to{
+        stroke-dashoffset: 0;
+    }
+    0%{
+        -webkit-filter: drop-shadow(-.75px 0px 6px #f6b4bf);
+        filter: drop-shadow(-.75px 0px 6px #f6b4bf);
+        stroke: #f6b4bf;
+    }
+    62%{
+        -webkit-filter: drop-shadow(-.75px 0px 6px #faf0e6);
+        filter: drop-shadow(-.75px 0px 6px #faf0e6);
+        stroke: #faf0e6;
+    }
+    92%{
+        -webkit-filter: drop-shadow(-.75px 0px 6px #cee2c7);
+        filter: drop-shadow(-.75px 0px 6px #cee2c7);
+        stroke: #cee2c7;
+    }
+}
+.line svg path,#path9{
+    fill-opacity: 0;
+    stroke-width: 20;
+    stroke-linecap: round;
+    stroke-dasharray: 870;
+    stroke-dashoffset: 870;
+    animation-name: draw5;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes draw5{
+    to{
+        stroke-dashoffset: 0;
+    }
+    0%{
+        -webkit-filter: drop-shadow(-.75px 0px 6px #004ff9);
+        filter: drop-shadow(-.75px 0px 6px #004ff9);
+        stroke: #004ff9;
+    }
+    62%{
+        -webkit-filter: drop-shadow(-.75px 0px 6px #83a4d4);
+        filter: drop-shadow(-.75px 0px 6px #83a4d4);
+        stroke: #83a4d4;
+    }
+    92%{
+        -webkit-filter: drop-shadow(-.75px 0px 6px #cee2c7);
+        filter: drop-shadow(-.75px 0px 6px #cee2c7);
+        stroke: #cee2c7;
+    }
+}
+.line svg path,#path11{
+    fill-opacity: 0;
+    stroke-width: 20;
+    stroke-linecap: round;
+    stroke-dasharray: 870;
+    stroke-dashoffset: 870;
+    animation-name: draw6;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes draw6{
+    to{
+        stroke-dashoffset: 0;
+    }
+    0%{
+        -webkit-filter: drop-shadow(-.75px 0px 6px #833ab4);
+        filter: drop-shadow(-.75px 0px 6px #833ab4);
+        stroke: #833ab4;
+    }
+    62%{
+        -webkit-filter: drop-shadow(-.75px 0px 6px #faf0e6);
+        filter: drop-shadow(-.75px 0px 6px #faf0e6);
+        stroke: #faf0e6;
+    }
+    92%{
+        -webkit-filter: drop-shadow(-.75px 0px 6px #cee2c7);
+        filter: drop-shadow(-.75px 0px 6px #cee2c7);
+        stroke: #cee2c7;
+    }
+}
+
+
+
