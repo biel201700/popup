@@ -8,10 +8,13 @@
     <link href="index.css" rel="stylesheet" type="text/css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>고속국도 양평-이천 4공구</title>
 </head>
 
 <body>
+    <!--toggle button-->
+    <!--data-로 시작하는 속성 : Dom 객체에 데이터 저장-->
     <div class="toggle">
         <label class="switch-button">
             <input type="checkbox" data-value="1" />
@@ -44,29 +47,30 @@
         </label>
         <p>산북2-2터널 양평방향</p>
     </div>
-    <div class="content">
-    </div>
+    <!--content-->
+    <div class="content"></div>
 
     <script>
+       
         $(document).ready(function () {
 
             // Toggle click 시 이미지 및 경로 나타나도록..
             $('.switch-button input').change(function () {
 
                 // 토글이 선택되면?
-                let thistoggle = $(this)[0].checked;
+                let this_Toggle = $(this)[0].checked;
                 // Toggle 버튼 체크 유무 판단
-                let toggle_status = $('.switch-button input:checked');
+                let toggle_Status = $('.switch-button input:checked');
                 // data-value 값
                 let value = $(this).attr("data-value");
-
+                
                 // 토글버튼이 true이면?
-                if (thistoggle == true) {
+                if (this_Toggle == true) {
                     // 선택된 토글만큼 반복문 돌리기
-                    for (var i = 0; i < toggle_status.length; i++) {
+                    for (var i = 0; i < toggle_Status.length; i++) {
                         // 이미지 유무 판단
                         let length = $('.line').length;
-                        toggle_true($(toggle_status[i]).attr("data-value"), length);
+                        toggle_True($(toggle_Status[i]).attr("data-value"), length);
                     }
                     // 토글버튼이 false이면?
                 } else {
@@ -99,7 +103,12 @@
             });
             // 이미지 클릭 시 이미지 안보이도록...
             $('.content').click(function () {
-                $('.line').remove();
+               // fadeOut : 선택된 요소의 불투명도를 점차 바꾸어 숨기기효과 (비동기)
+               // 숫자일 경우 : 1000분의 1초, fast(200), slow(600), 아무입력x(400)
+               // 문자일 경우 : .fadeOut('slow');
+                $('.line').fadeOut(function () {
+                    $('.line').remove();
+                });
             });
             // 경로 좌표
             $(document).on('click', 'body', function (e) {
@@ -108,13 +117,12 @@
             });
         });
         // 토글이 true라면?
-        function toggle_true(value, length) {
+        function toggle_True(value, length) {
             // toggle button에 저장된 data-value값에 따라 데이터 가져오기
             // 산북1터널 이천방향
             if (value == 1) {
                 // 이미지 유무 판단하여 이미지가 없다면 전부 생성 
                 if (length == 0) {
-
                     let image = `<div class="line">
         <svg x="0" y="0" width="1350" height="650" xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns="http://www.w3.org/2000/svg">
@@ -192,6 +200,7 @@
         </svg>
     </div>`;
                     $('.content').append(image);
+                    $('.line').fadeIn(800);
                     $('.line svg #path1').css('display', 'block');
                     $('.line svg #textpath1').css('display', 'block');
                     // 이미지가 있다면 path만 생성
@@ -282,6 +291,7 @@
         </svg>
     </div>`;
                     $('.content').append(image);
+                    $('.line').fadeIn(800);
                     $('.line svg #path3').css('display', 'block');
                     $('.line svg #textpath2').css('display', 'block');
                     // 이미지가 있다면 path만 생성
@@ -372,6 +382,7 @@
         </svg>
     </div>`;
                     $('.content').append(image);
+                    $('.line').fadeIn(800);
                     $('.line svg #path5').css('display', 'block');
                     $('.line svg #textpath3').css('display', 'block');
                     // 이미지가 있다면 path만 생성
@@ -462,6 +473,7 @@
         </svg>
     </div>`;
                     $('.content').append(image);
+                    $('.line').fadeIn(800);
                     $('.line svg #path7').css('display', 'block');
                     $('.line svg #textpath4').css('display', 'block');
                     // 이미지가 있다면 path만 생성
@@ -552,6 +564,7 @@
         </svg>
     </div>`;
                     $('.content').append(image);
+                    $('.line').fadeIn(800);
                     $('.line svg #path9').css('display', 'block');
                     $('.line svg #textpath5').css('display', 'block');
                     // 이미지가 있다면 path만 생성
@@ -642,6 +655,7 @@
         </svg>
     </div>`;
                     $('.content').append(image);
+                    $('.line').fadeIn(800);
                     $('.line svg #path11').css('display', 'block');
                     $('.line svg #textpath6').css('display', 'block');
                     // 이미지가 있다면 path만 생성
