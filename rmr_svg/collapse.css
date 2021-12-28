@@ -1,0 +1,284 @@
+/*toggle*/
+.switch-button { 
+    position: relative; 
+    display: inline-block; 
+    width: 46px; 
+    height: 20px;
+    margin-left: 3%;
+    margin-top: 5%;
+} 
+.switch-button input { 
+    opacity: 0; 
+    width: 0; 
+    height: 0; 
+} 
+.onoff-switch { 
+    position: absolute; 
+    cursor: pointer; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    border-radius:20px; 
+    background-color: #ccc; 
+    box-shadow: inset 1px 5px 1px #999; 
+    -webkit-transition: .4s; transition: .4s; 
+} 
+.onoff-switch:before { 
+    position: absolute; 
+    content: ""; 
+    height: 13px; 
+    width: 13px; 
+    left: 4px; 
+    bottom: 4px; 
+    background-color: #fff; 
+    -webkit-transition: .5s; 
+    transition: .4s; 
+    border-radius:20px; 
+} 
+.switch-button input:checked + .onoff-switch { 
+    background-color: #F2D522; 
+    box-shadow: inset 1px 5px 1px #E3AE56; 
+} 
+.switch-button input:checked + .onoff-switch:before { 
+    -webkit-transform: translateX(26px); 
+    -ms-transform: translateX(26px); 
+    transform: translateX(26px); 
+}
+p {
+    margin:0px;
+    display:inline-block;
+    font-size:12px;
+    font-weight:bold;
+    top: -4.5px;
+    position: relative;
+}
+.toggle{
+    text-align: center;
+}
+/*image*/
+.content{
+    text-align: center;
+    margin-left: 10%;
+}
+/*pin*/
+image{
+    filter: drop-shadow(3px 5px 2px #fff);
+}
+/*이천 & 양평*/
+.neonText{
+    animation: pulsate 0.5s infinite alternate;
+    color:#fff;
+    font-weight: bold;
+    font-size: 25px;
+}
+@keyframes pulsate { 
+    100% { 
+        text-shadow: 
+        0 0 4px #fff, 
+        0 0 11px navy, 
+        0 0 19px #fff;
+    } 
+    0% { 
+         text-shadow: 
+         0 0 4px #fff, 
+         0 0 10px #fff, 
+         0 0 18px yellow, 
+         0 0 38px #fff;
+    } 
+}
+/*산북1터널 이천방향*/
+.line svg path,#path1{
+    fill-opacity: 0;
+    stroke-width: 20;
+    stroke-linecap: round;
+    stroke-dasharray: 870;
+    stroke-dashoffset: 870;
+    animation-name: draw1;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes draw1{
+    to{
+        stroke-dashoffset: 0;
+    }
+    0%{
+        -webkit-filter: drop-shadow(-.75px 0px 6px #ff5f6d);
+        filter: drop-shadow(-.75px 0px 6px #ff5f6d);
+        stroke: #ff5f6d;
+    }
+    62%{
+        -webkit-filter: drop-shadow(-.75px 0px 6px #ffc371);
+        filter: drop-shadow(-.75px 0px 6px #ffc371);
+        stroke: #ffc371;
+    }
+    92%{
+        -webkit-filter: drop-shadow(-.75px 0px 6px #cee2c7);
+        filter: drop-shadow(-.75px 0px 6px #cee2c7);
+        stroke: #cee2c7;
+    }
+}
+/*산북1터널 양평방향*/
+.line svg path,#path3{
+    fill-opacity: 0;
+    stroke-width: 20;
+    stroke-linecap: round;
+    stroke-dasharray: 870;
+    stroke-dashoffset: 870;
+    animation-name: draw2;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes draw2{
+    to{
+        stroke-dashoffset: 0;
+    }
+    0%{
+        -webkit-filter: drop-shadow(-.75px 0px 6px #73c8a9);
+        filter: drop-shadow(-.75px 0px 6px #73c8a9);
+        stroke: #73c8a9;
+    }
+    62%{
+        -webkit-filter: drop-shadow(-.75px 0px 6px #c2e59c);
+        filter: drop-shadow(-.75px 0px 6px #c2e59c);
+        stroke: #c2e59c;
+    }
+    92%{
+        -webkit-filter: drop-shadow(-.75px 0px 6px #cee2c7);
+        filter: drop-shadow(-.75px 0px 6px #cee2c7);
+        stroke: #cee2c7;
+    }
+}
+/*산북2-1터널 이천방향*/
+.line svg path,#path5{
+    fill-opacity: 0;
+    stroke-width: 20;
+    stroke-linecap: round;
+    stroke-dasharray: 870;
+    stroke-dashoffset: 870;
+    animation-name: draw3;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes draw3{
+    to{
+        stroke-dashoffset: 0;
+    }
+    0%{
+        -webkit-filter: drop-shadow(-.75px 0px 6px #fdfc47);
+        filter: drop-shadow(-.75px 0px 6px #fdfc47);
+        stroke: #fdfc47;
+    }
+    62%{
+        -webkit-filter: drop-shadow(-.75px 0px 6px #faf0e6);
+        filter: drop-shadow(-.75px 0px 6px #faf0e6);
+        stroke: #faf0e6;
+    }
+    92%{
+        -webkit-filter: drop-shadow(-.75px 0px 6px #cee2c7);
+        filter: drop-shadow(-.75px 0px 6px #cee2c7);
+        stroke: #cee2c7;
+    }
+}
+/*산북2-1터널 양평방향*/
+.line svg path,#path7{
+    fill-opacity: 0;
+    stroke-width: 20;
+    stroke-linecap: round;
+    stroke-dasharray: 870;
+    stroke-dashoffset: 870;
+    animation-name: draw4;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes draw4{
+    to{
+        stroke-dashoffset: 0;
+    }
+    0%{
+        -webkit-filter: drop-shadow(-.75px 0px 6px #f6b4bf);
+        filter: drop-shadow(-.75px 0px 6px #f6b4bf);
+        stroke: #f6b4bf;
+    }
+    62%{
+        -webkit-filter: drop-shadow(-.75px 0px 6px #faf0e6);
+        filter: drop-shadow(-.75px 0px 6px #faf0e6);
+        stroke: #faf0e6;
+    }
+    92%{
+        -webkit-filter: drop-shadow(-.75px 0px 6px #cee2c7);
+        filter: drop-shadow(-.75px 0px 6px #cee2c7);
+        stroke: #cee2c7;
+    }
+}
+/*산북2-2터널 이천방향*/
+.line svg path,#path9{
+    fill-opacity: 0;
+    stroke-width: 20;
+    stroke-linecap: round;
+    stroke-dasharray: 870;
+    stroke-dashoffset: 870;
+    animation-name: draw5;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes draw5{
+    to{
+        stroke-dashoffset: 0;
+    }
+    0%{
+        -webkit-filter: drop-shadow(-.75px 0px 6px #004ff9);
+        filter: drop-shadow(-.75px 0px 6px #004ff9);
+        stroke: #004ff9;
+    }
+    62%{
+        -webkit-filter: drop-shadow(-.75px 0px 6px #83a4d4);
+        filter: drop-shadow(-.75px 0px 6px #83a4d4);
+        stroke: #83a4d4;
+    }
+    92%{
+        -webkit-filter: drop-shadow(-.75px 0px 6px #cee2c7);
+        filter: drop-shadow(-.75px 0px 6px #cee2c7);
+        stroke: #cee2c7;
+    }
+}
+/*산북2-2터널 양평방향*/
+.line svg path,#path11{
+    fill-opacity: 0;
+    stroke-width: 20;
+    stroke-linecap: round;
+    stroke-dasharray: 870;
+    stroke-dashoffset: 870;
+    animation-name: draw6;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes draw6{
+    to{
+        stroke-dashoffset: 0;
+    }
+    0%{
+        -webkit-filter: drop-shadow(-.75px 0px 6px #833ab4);
+        filter: drop-shadow(-.75px 0px 6px #833ab4);
+        stroke: #833ab4;
+    }
+    62%{
+        -webkit-filter: drop-shadow(-.75px 0px 6px #faf0e6);
+        filter: drop-shadow(-.75px 0px 6px #faf0e6);
+        stroke: #faf0e6;
+    }
+    92%{
+        -webkit-filter: drop-shadow(-.75px 0px 6px #cee2c7);
+        filter: drop-shadow(-.75px 0px 6px #cee2c7);
+        stroke: #cee2c7;
+    }
+}
+
+
+

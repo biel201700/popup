@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="collapse.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Collapse - 고속국도 양평-이천 4공구</title>
+</head>
+
+<body>
+    <div class="toggle">
+        <label class="switch-button" data-toggle="collapse" data-target="#collaspediv1">
+            <input type="checkbox" data-value="1" />
+            <span class="onoff-switch"></span>
+        </label>
+        <p>산북1터널 이천방향</p>
+        <label class="switch-button" data-toggle="collapse" data-target="#collaspediv1">
+            <input type="checkbox" data-value="2" />
+            <span class="onoff-switch"></span>
+        </label>
+        <p>산북1터널 양평방향</p>
+        <label class="switch-button" data-toggle="collapse" data-target="#collaspediv1">
+            <input type="checkbox" data-value="3" />
+            <span class="onoff-switch"></span>
+        </label>
+        <p>산북2-1터널 이천방향</p>
+        <label class="switch-button" data-toggle="collapse" data-target="#collaspediv1">
+            <input type="checkbox" data-value="4" />
+            <span class="onoff-switch"></span>
+        </label>
+        <p>산북2-1터널 양평방향</p>
+        <label class="switch-button" data-toggle="collapse" data-target="#collaspediv1">
+            <input type="checkbox" data-value="5" />
+            <span class="onoff-switch"></span>
+        </label>
+        <p>산북2-2터널 이천방향</p>
+        <label class="switch-button" data-toggle="collapse" data-target="#collaspediv1">
+            <input type="checkbox" data-value="6" />
+            <span class="onoff-switch"></span>
+        </label>
+        <p>산북2-2터널 양평방향</p>
+    </div>
+    <div id="collaspediv1" class="collapse div1">
+        <div class="content"></div>
+    </div>
+<!--새로고침 후 처음 토글 버튼 클릭하면 그냥 나왔다가 다시 해당 토글 버튼 클릭하면 콜랩스 적용되며 이미지 클릭 시 닫기 
+에 경우에도 두번 다닥 눌러야 종료가 됨-->
+    <script>
+        $(document).ready(function () {
+            $('.switch-button input').click(function () {
+                let length = $('.line').length;
+                let value = $(this).attr("data-value");
+                let this_toggle = $(this)[0].checked;
+                let toggle_status = $('.switch-button input:checked');
+
+                if (this_toggle == true) {
+                    for (var i = 0; i < toggle_status.length; i++) {
+                        toggle_true($(toggle_status[i]).attr("data-value"), length);
+                    }
+                } else {
+                    if (value == 1) {
+                        $('#path1').css('display', 'none');
+                        $('#textpath1').css('display', 'none');
+                    } else if (value == 2) {
+                        $('#path3').css('display', 'none');
+                        $('#textpath2').css('display', 'none');
+                    } else if (value == 3) {
+                        $('#path5').css('display', 'none');
+                        $('#textpath3').css('display', 'none');
+                    } else if (value == 4) {
+                        $('#path7').css('display', 'none');
+                        $('#textpath4').css('display', 'none');
+                    } else if (value == 5) {
+                        $('#path9').css('display', 'none');
+                        $('#textpath5').css('display', 'none');
+                    } else {
+                        $('#path11').css('display', 'none');
+                        $('#textpath6').css('display', 'none');
+                    }
+                }
+                $('.content').click(function () {
+                    // content에 남으면 안되서 remove 사용 
+                    $('.line').collapse('toggle');
+                    console.log(length);
+                    // 두번 누르면 꺼지네?
+                    // if(length == 1){
+                    //     $('.line').remove();
+                    // } else{
+
+                    // } 
+                });
+            });
+            function toggle_true(value, length) {
+                if (value == 1) {
+                    if (length == 0) {
+                        let image = `<div class="line">
+        <svg x="0" y="0" width="1350" height="650" xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <rect id="rect" x="120" y="100" width="950" height="480" rx="15" ry="15" />
+                <clipPath id="clip">
+                    <use xlink:href="#rect" />
+                </clipPath>
+            </defs>
+            <use xlink:href="#rect" stroke-weight="0.5" fill="#ffffff" />
+            <image xlink:href="taeyoung_tunnel.png" x="120" y="100" width="1000" height="500" clip-path="url(#clip)">
+            </image>
+            <g>
+                <image xlink:href="pin.png" x="160" y="207" width="30" height="30"></image>
+                <text class="neonText" fill="#ffffff" x="150" y="265">이천</text>
+            </g>
+            <g>
+                <image xlink:href="pin.png" x="970" y="340" width="30" height="30"></image>
+                <text class="neonText" fill="#ffffff" x="960" y="400">양평</text>
+            </g>
+            <path id="path1" style='display: none;' 
+                d="M404 255, 384 249, 362 243, 338 238, 310 234, 279 228, 251 223, 220 222" />
+            <path id="path2" style='display: none;'
+                d="M220 222, 404 255" /> 
+            <text x="20">
+                <textPath xlink:href="#path2" id="textpath1" class="neonText" style="font-size: 15px;display: none;">
+                    산북1터널 이천방향
+                </textPath>
+            </text>
+            <path id="path3" style='display: none;' 
+                d="M389 298, 365 292, 344 287, 311 280, 280, 275, 249 272, 217 268" />
+            <path id="path4" style="display: none;"
+                d="M210 270, 389 299" />
+                <text x="22">
+                <textPath xlink:href="#path4" id="textpath2" class="neonText" style="font-size: 15px;display: none;">
+                    산북1터널 양평방향
+                </textPath>
+            </text>
+            <path id="path5" style='display: none;' 
+            d="M597 380, 637 391, 667 398, 695 404, 725 411, 748 414" />
+            <path id="path6" style="display: none;"
+            d="M597 380, 748 414" />
+            <text x="1">
+                <textPath xlink:href="#path6" id="textpath3" class="neonText" style="font-size: 15px;display: none;">
+                    산북2-1터널 이천방향
+                </textPath>
+            </text>
+            <path id="path7" style='display: none;'
+                d="M578 423, 593 427, 625 438, 653 446, 683 454, 712 461, 739 468"/>
+                <path id="path8" style="display: none;"
+                d="M578 423, 739 468" />
+            <text x="9">
+                <textPath xlink:href="#path8" id="textpath4" class="neonText" style="font-size: 15px;display: none;">
+                    산북2-1터널 양평방향
+                </textPath>
+            </text>
+            <path id="path9" style='display: none;' 
+                d="M927 429, 908 428, 880 428, 852 426, 795 423, 769 419" />
+            <path id="path10" style="display: none;"
+                d="M769 419, 927 429" />
+            <text x="6">
+                <textPath xlink:href="#path10" id="textpath5" class="neonText" style="font-size: 15px;display: none;">
+                    산북2-2터널 이천방향
+                </textPath>
+            </text>
+            <path id="path11" style='display: none;'
+                d="M922 493, 883 490, 849 487, 815 482, 790 477, 757 473" />
+            <path id="path12" style="display: none;"
+                d="M757 473, 922 493" />
+            <text x="10">
+                <textPath xlink:href="#path12" id="textpath6" class="neonText" style="font-size: 15px;display: none;">
+                    산북2-2터널 양평방향
+                </textPath>
+            </text>
+        </svg>
+    </div>`;
+                        $('.content').append(image);
+                        $('.line svg #path1').css('display', 'block');
+                        $('.line svg #textpath1').css('display', 'block');
+                    } else {
+                        $('.line svg #path1').css('display', 'block');
+                        $('.line svg #textpath1').css('display', 'block');
+                    }
+                } else if (value == 2) {
+                    if (length == 0) {
+                        let image = `<div class="line">
+        <svg x="0" y="0" width="1350" height="650" xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <rect id="rect" x="120" y="100" width="950" height="480" rx="15" ry="15" />
+                <clipPath id="clip">
+                    <use xlink:href="#rect" />
+                </clipPath>
+            </defs>
+            <use xlink:href="#rect" stroke-weight="0.5" fill="#ffffff" />
+            <image xlink:href="taeyoung_tunnel.png" x="120" y="100" width="1000" height="500" clip-path="url(#clip)">
+            </image>
+            <g>
+                <image xlink:href="pin.png" x="160" y="207" width="30" height="30"></image>
+                <text class="neonText" fill="#ffffff" x="150" y="265">이천</text>
+            </g>
+            <g>
+                <image xlink:href="pin.png" x="970" y="340" width="30" height="30"></image>
+                <text class="neonText" fill="#ffffff" x="960" y="400">양평</text>
+            </g>
+            <path id="path1" style='display: none;' 
+                d="M404 255, 384 249, 362 243, 338 238, 310 234, 279 228, 251 223, 220 222" />
+            <path id="path2" style='display: none;'
+                d="M220 222, 404 255" /> 
+            <text x="20">
+                <textPath xlink:href="#path2" id="textpath1" class="neonText" style="font-size: 15px;display: none;">
+                    산북1터널 이천방향
+                </textPath>
+            </text>
+            <path id="path3" style='display: none;' 
+                d="M389 298, 365 292, 344 287, 311 280, 280, 275, 249 272, 217 268" />
+            <path id="path4" style="display: none;"
+                d="M210 270, 389 299" />
+                <text x="22">
+                <textPath xlink:href="#path4" id="textpath2" class="neonText" style="font-size: 15px;display: none;">
+                    산북1터널 양평방향
+                </textPath>
+            </text>
+            <path id="path5" style='display: none;' 
+            d="M597 380, 637 391, 667 398, 695 404, 725 411, 748 414" />
+            <path id="path6" style="display: none;"
+            d="M597 380, 748 414" />
+            <text x="1">
+                <textPath xlink:href="#path6" id="textpath3" class="neonText" style="font-size: 15px;display: none;">
+                    산북2-1터널 이천방향
+                </textPath>
+            </text>
+            <path id="path7" style='display: none;'
+                d="M578 423, 593 427, 625 438, 653 446, 683 454, 712 461, 739 468"/>
+                <path id="path8" style="display: none;"
+                d="M578 423, 739 468" />
+            <text x="9">
+                <textPath xlink:href="#path8" id="textpath4" class="neonText" style="font-size: 15px;display: none;">
+                    산북2-1터널 양평방향
+                </textPath>
+            </text>
+            <path id="path9" style='display: none;' 
+                d="M927 429, 908 428, 880 428, 852 426, 795 423, 769 419" />
+            <path id="path10" style="display: none;"
+                d="M769 419, 927 429" />
+            <text x="6">
+                <textPath xlink:href="#path10" id="textpath5" class="neonText" style="font-size: 15px;display: none;">
+                    산북2-2터널 이천방향
+                </textPath>
+            </text>
+            <path id="path11" style='display: none;'
+                d="M922 493, 883 490, 849 487, 815 482, 790 477, 757 473" />
+            <path id="path12" style="display: none;"
+                d="M757 473, 922 493" />
+            <text x="10">
+                <textPath xlink:href="#path12" id="textpath6" class="neonText" style="font-size: 15px;display: none;">
+                    산북2-2터널 양평방향
+                </textPath>
+            </text>
+        </svg>
+    </div>`;
+                        $('.content').append(image);
+                        $('.line svg #path3').css('display', 'block');
+                        $('.line svg #textpath2').css('display', 'block');
+                    } else {
+                        $('.line svg #path3').css('display', 'block');
+                        $('.line svg #textpath2').css('display', 'block');
+                    }
+                } else if (value == 3) {
+                    if (length == 0) {
+                        let image = `<div class="line">
+        <svg x="0" y="0" width="1350" height="650" xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <rect id="rect" x="120" y="100" width="950" height="480" rx="15" ry="15" />
+                <clipPath id="clip">
+                    <use xlink:href="#rect" />
+                </clipPath>
+            </defs>
+            <use xlink:href="#rect" stroke-weight="0.5" fill="#ffffff" />
+            <image xlink:href="taeyoung_tunnel.png" x="120" y="100" width="1000" height="500" clip-path="url(#clip)">
+            </image>
+            <g>
+                <image xlink:href="pin.png" x="160" y="207" width="30" height="30"></image>
+                <text class="neonText" fill="#ffffff" x="150" y="265">이천</text>
+            </g>
+            <g>
+                <image xlink:href="pin.png" x="970" y="340" width="30" height="30"></image>
+                <text class="neonText" fill="#ffffff" x="960" y="400">양평</text>
+            </g>
+            <path id="path1" style='display: none;' 
+                d="M404 255, 384 249, 362 243, 338 238, 310 234, 279 228, 251 223, 220 222" />
+            <path id="path2" style='display: none;'
+                d="M220 222, 404 255" /> 
+            <text x="20">
+                <textPath xlink:href="#path2" id="textpath1" class="neonText" style="font-size: 15px;display: none;">
+                    산북1터널 이천방향
+                </textPath>
+            </text>
+            <path id="path3" style='display: none;' 
+                d="M389 298, 365 292, 344 287, 311 280, 280, 275, 249 272, 217 268" />
+            <path id="path4" style="display: none;"
+                d="M210 270, 389 299" />
+                <text x="22">
+                <textPath xlink:href="#path4" id="textpath2" class="neonText" style="font-size: 15px;display: none;">
+                    산북1터널 양평방향
+                </textPath>
+            </text>
+            <path id="path5" style='display: none;' 
+            d="M597 380, 637 391, 667 398, 695 404, 725 411, 748 414" />
+            <path id="path6" style="display: none;"
+            d="M597 380, 748 414" />
+            <text x="1">
+                <textPath xlink:href="#path6" id="textpath3" class="neonText" style="font-size: 15px;display: none;">
+                    산북2-1터널 이천방향
+                </textPath>
+            </text>
+            <path id="path7" style='display: none;'
+                d="M578 423, 593 427, 625 438, 653 446, 683 454, 712 461, 739 468"/>
+                <path id="path8" style="display: none;"
+                d="M578 423, 739 468" />
+            <text x="9">
+                <textPath xlink:href="#path8" id="textpath4" class="neonText" style="font-size: 15px;display: none;">
+                    산북2-1터널 양평방향
+                </textPath>
+            </text>
+            <path id="path9" style='display: none;' 
+                d="M927 429, 908 428, 880 428, 852 426, 795 423, 769 419" />
+            <path id="path10" style="display: none;"
+                d="M769 419, 927 429" />
+            <text x="6">
+                <textPath xlink:href="#path10" id="textpath5" class="neonText" style="font-size: 15px;display: none;">
+                    산북2-2터널 이천방향
+                </textPath>
+            </text>
+            <path id="path11" style='display: none;'
+                d="M922 493, 883 490, 849 487, 815 482, 790 477, 757 473" />
+            <path id="path12" style="display: none;"
+                d="M757 473, 922 493" />
+            <text x="10">
+                <textPath xlink:href="#path12" id="textpath6" class="neonText" style="font-size: 15px;display: none;">
+                    산북2-2터널 양평방향
+                </textPath>
+            </text>
+        </svg>
+    </div>`;
+                        $('.content').append(image);
+                        $('.line svg #path5').css('display', 'block');
+                        $('.line svg #textpath3').css('display', 'block');
+                    } else {
+                        $('.line svg #path5').css('display', 'block');
+                        $('.line svg #textpath3').css('display', 'block');
+                    }
+                } else if (value == 4) {
+                    if (length == 0) {
+                        let image = `<div class="line">
+        <svg x="0" y="0" width="1350" height="650" xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <rect id="rect" x="120" y="100" width="950" height="480" rx="15" ry="15" />
+                <clipPath id="clip">
+                    <use xlink:href="#rect" />
+                </clipPath>
+            </defs>
+            <use xlink:href="#rect" stroke-weight="0.5" fill="#ffffff" />
+            <image xlink:href="taeyoung_tunnel.png" x="120" y="100" width="1000" height="500" clip-path="url(#clip)">
+            </image>
+            <g>
+                <image xlink:href="pin.png" x="160" y="207" width="30" height="30"></image>
+                <text class="neonText" fill="#ffffff" x="150" y="265">이천</text>
+            </g>
+            <g>
+                <image xlink:href="pin.png" x="970" y="340" width="30" height="30"></image>
+                <text class="neonText" fill="#ffffff" x="960" y="400">양평</text>
+            </g>
+            <path id="path1" style='display: none;' 
+                d="M404 255, 384 249, 362 243, 338 238, 310 234, 279 228, 251 223, 220 222" />
+            <path id="path2" style='display: none;'
+                d="M220 222, 404 255" /> 
+            <text x="20">
+                <textPath xlink:href="#path2" id="textpath1" class="neonText" style="font-size: 15px;display: none;">
+                    산북1터널 이천방향
+                </textPath>
+            </text>
+            <path id="path3" style='display: none;' 
+                d="M389 298, 365 292, 344 287, 311 280, 280, 275, 249 272, 217 268" />
+            <path id="path4" style="display: none;"
+                d="M210 270, 389 299" />
+                <text x="22">
+                <textPath xlink:href="#path4" id="textpath2" class="neonText" style="font-size: 15px;display: none;">
+                    산북1터널 양평방향
+                </textPath>
+            </text>
+            <path id="path5" style='display: none;' 
+            d="M597 380, 637 391, 667 398, 695 404, 725 411, 748 414" />
+            <path id="path6" style="display: none;"
+            d="M597 380, 748 414" />
+            <text x="1">
+                <textPath xlink:href="#path6" id="textpath3" class="neonText" style="font-size: 15px;display: none;">
+                    산북2-1터널 이천방향
+                </textPath>
+            </text>
+            <path id="path7" style='display: none;'
+                d="M578 423, 593 427, 625 438, 653 446, 683 454, 712 461, 739 468"/>
+                <path id="path8" style="display: none;"
+                d="M578 423, 739 468" />
+            <text x="9">
+                <textPath xlink:href="#path8" id="textpath4" class="neonText" style="font-size: 15px;display: none;">
+                    산북2-1터널 양평방향
+                </textPath>
+            </text>
+            <path id="path9" style='display: none;' 
+                d="M927 429, 908 428, 880 428, 852 426, 795 423, 769 419" />
+            <path id="path10" style="display: none;"
+                d="M769 419, 927 429" />
+            <text x="6">
+                <textPath xlink:href="#path10" id="textpath5" class="neonText" style="font-size: 15px;display: none;">
+                    산북2-2터널 이천방향
+                </textPath>
+            </text>
+            <path id="path11" style='display: none;'
+                d="M922 493, 883 490, 849 487, 815 482, 790 477, 757 473" />
+            <path id="path12" style="display: none;"
+                d="M757 473, 922 493" />
+            <text x="10">
+                <textPath xlink:href="#path12" id="textpath6" class="neonText" style="font-size: 15px;display: none;">
+                    산북2-2터널 양평방향
+                </textPath>
+            </text>
+        </svg>
+    </div>`;
+                        $('.content').append(image);
+                        $('.line svg #path7').css('display', 'block');
+                        $('.line svg #textpath4').css('display', 'block');
+                    } else {
+                        $('.line svg #path7').css('display', 'block');
+                        $('.line svg #textpath4').css('display', 'block');
+                    }
+                } else if (value == 5) {
+                    if (length == 0) {
+                        let image = `<div class="line">
+        <svg x="0" y="0" width="1350" height="650" xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <rect id="rect" x="120" y="100" width="950" height="480" rx="15" ry="15" />
+                <clipPath id="clip">
+                    <use xlink:href="#rect" />
+                </clipPath>
+            </defs>
+            <use xlink:href="#rect" stroke-weight="0.5" fill="#ffffff" />
+            <image xlink:href="taeyoung_tunnel.png" x="120" y="100" width="1000" height="500" clip-path="url(#clip)">
+            </image>
+            <g>
+                <image xlink:href="pin.png" x="160" y="207" width="30" height="30"></image>
+                <text class="neonText" fill="#ffffff" x="150" y="265">이천</text>
+            </g>
+            <g>
+                <image xlink:href="pin.png" x="970" y="340" width="30" height="30"></image>
+                <text class="neonText" fill="#ffffff" x="960" y="400">양평</text>
+            </g>
+            <path id="path1" style='display: none;' 
+                d="M404 255, 384 249, 362 243, 338 238, 310 234, 279 228, 251 223, 220 222" />
+            <path id="path2" style='display: none;'
+                d="M220 222, 404 255" /> 
+            <text x="20">
+                <textPath xlink:href="#path2" id="textpath1" class="neonText" style="font-size: 15px;display: none;">
+                    산북1터널 이천방향
+                </textPath>
+            </text>
+            <path id="path3" style='display: none;' 
+                d="M389 298, 365 292, 344 287, 311 280, 280, 275, 249 272, 217 268" />
+            <path id="path4" style="display: none;"
+                d="M210 270, 389 299" />
+                <text x="22">
+                <textPath xlink:href="#path4" id="textpath2" class="neonText" style="font-size: 15px;display: none;">
+                    산북1터널 양평방향
+                </textPath>
+            </text>
+            <path id="path5" style='display: none;' 
+            d="M597 380, 637 391, 667 398, 695 404, 725 411, 748 414" />
+            <path id="path6" style="display: none;"
+            d="M597 380, 748 414" />
+            <text x="1">
+                <textPath xlink:href="#path6" id="textpath3" class="neonText" style="font-size: 15px;display: none;">
+                    산북2-1터널 이천방향
+                </textPath>
+            </text>
+            <path id="path7" style='display: none;'
+                d="M578 423, 593 427, 625 438, 653 446, 683 454, 712 461, 739 468"/>
+                <path id="path8" style="display: none;"
+                d="M578 423, 739 468" />
+            <text x="9">
+                <textPath xlink:href="#path8" id="textpath4" class="neonText" style="font-size: 15px;display: none;">
+                    산북2-1터널 양평방향
+                </textPath>
+            </text>
+            <path id="path9" style='display: none;' 
+                d="M927 429, 908 428, 880 428, 852 426, 795 423, 769 419" />
+            <path id="path10" style="display: none;"
+                d="M769 419, 927 429" />
+            <text x="6">
+                <textPath xlink:href="#path10" id="textpath5" class="neonText" style="font-size: 15px;display: none;">
+                    산북2-2터널 이천방향
+                </textPath>
+            </text>
+            <path id="path11" style='display: none;'
+                d="M922 493, 883 490, 849 487, 815 482, 790 477, 757 473" />
+            <path id="path12" style="display: none;"
+                d="M757 473, 922 493" />
+            <text x="10">
+                <textPath xlink:href="#path12" id="textpath6" class="neonText" style="font-size: 15px;display: none;">
+                    산북2-2터널 양평방향
+                </textPath>
+            </text>
+        </svg>
+    </div>`;
+                        $('.content').append(image);
+                        $('.line svg #path9').css('display', 'block');
+                        $('.line svg #textpath5').css('display', 'block');
+                    } else {
+                        $('.line svg #path9').css('display', 'block');
+                        $('.line svg #textpath5').css('display', 'block');
+                    }
+                } else {
+                    if (length == 0) {
+                        let image = `<div class="line">
+        <svg x="0" y="0" width="1350" height="650" xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <rect id="rect" x="120" y="100" width="950" height="480" rx="15" ry="15" />
+                <clipPath id="clip">
+                    <use xlink:href="#rect" />
+                </clipPath>
+            </defs>
+            <use xlink:href="#rect" stroke-weight="0.5" fill="#ffffff" />
+            <image xlink:href="taeyoung_tunnel.png" x="120" y="100" width="1000" height="500" clip-path="url(#clip)">
+            </image>
+            <g>
+                <image xlink:href="pin.png" x="160" y="207" width="30" height="30"></image>
+                <text class="neonText" fill="#ffffff" x="150" y="265">이천</text>
+            </g>
+            <g>
+                <image xlink:href="pin.png" x="970" y="340" width="30" height="30"></image>
+                <text class="neonText" fill="#ffffff" x="960" y="400">양평</text>
+            </g>
+            <path id="path1" style='display: none;' 
+                d="M404 255, 384 249, 362 243, 338 238, 310 234, 279 228, 251 223, 220 222" />
+            <path id="path2" style='display: none;'
+                d="M220 222, 404 255" /> 
+            <text x="20">
+                <textPath xlink:href="#path2" id="textpath1" class="neonText" style="font-size: 15px;display: none;">
+                    산북1터널 이천방향
+                </textPath>
+            </text>
+            <path id="path3" style='display: none;' 
+                d="M389 298, 365 292, 344 287, 311 280, 280, 275, 249 272, 217 268" />
+            <path id="path4" style="display: none;"
+                d="M210 270, 389 299" />
+                <text x="22">
+                <textPath xlink:href="#path4" id="textpath2" class="neonText" style="font-size: 15px;display: none;">
+                    산북1터널 양평방향
+                </textPath>
+            </text>
+            <path id="path5" style='display: none;' 
+            d="M597 380, 637 391, 667 398, 695 404, 725 411, 748 414" />
+            <path id="path6" style="display: none;"
+            d="M597 380, 748 414" />
+            <text x="1">
+                <textPath xlink:href="#path6" id="textpath3" class="neonText" style="font-size: 15px;display: none;">
+                    산북2-1터널 이천방향
+                </textPath>
+            </text>
+            <path id="path7" style='display: none;'
+                d="M578 423, 593 427, 625 438, 653 446, 683 454, 712 461, 739 468"/>
+                <path id="path8" style="display: none;"
+                d="M578 423, 739 468" />
+            <text x="9">
+                <textPath xlink:href="#path8" id="textpath4" class="neonText" style="font-size: 15px;display: none;">
+                    산북2-1터널 양평방향
+                </textPath>
+            </text>
+            <path id="path9" style='display: none;' 
+                d="M927 429, 908 428, 880 428, 852 426, 795 423, 769 419" />
+            <path id="path10" style="display: none;"
+                d="M769 419, 927 429" />
+            <text x="6">
+                <textPath xlink:href="#path10" id="textpath5" class="neonText" style="font-size: 15px;display: none;">
+                    산북2-2터널 이천방향
+                </textPath>
+            </text>
+            <path id="path11" style='display: none;'
+                d="M922 493, 883 490, 849 487, 815 482, 790 477, 757 473" />
+            <path id="path12" style="display: none;"
+                d="M757 473, 922 493" />
+            <text x="10">
+                <textPath xlink:href="#path12" id="textpath6" class="neonText" style="font-size: 15px;display: none;">
+                    산북2-2터널 양평방향
+                </textPath>
+            </text>
+        </svg>
+    </div>`;
+                        $('.content').append(image);
+                        $('.line svg #path11').css('display', 'block');
+                        $('.line svg #textpath6').css('display', 'block');
+                    } else {
+                        $('.line svg #path11').css('display', 'block');
+                        $('.line svg #textpath6').css('display', 'block');
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+
+</html>
