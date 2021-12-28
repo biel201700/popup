@@ -50,18 +50,17 @@
     <div id="collaspediv1" class="collapse div1">
         <div class="content"></div>
     </div>
-<!--새로고침 후 처음 토글 버튼 클릭하면 그냥 나왔다가 다시 해당 토글 버튼 클릭하면 콜랩스 적용되며 이미지 클릭 시 닫기 
-에 경우에도 두번 다닥 눌러야 종료가 됨-->
     <script>
         $(document).ready(function () {
             $('.switch-button input').click(function () {
-                let length = $('.line').length;
+               
                 let value = $(this).attr("data-value");
                 let this_toggle = $(this)[0].checked;
                 let toggle_status = $('.switch-button input:checked');
 
                 if (this_toggle == true) {
                     for (var i = 0; i < toggle_status.length; i++) {
+                        let length = $('.line').length;
                         toggle_true($(toggle_status[i]).attr("data-value"), length);
                     }
                 } else {
@@ -85,17 +84,9 @@
                         $('#textpath6').css('display', 'none');
                     }
                 }
-                $('.content').click(function () {
-                    // content에 남으면 안되서 remove 사용 
-                    $('.line').collapse('toggle');
-                    console.log(length);
-                    // 두번 누르면 꺼지네?
-                    // if(length == 1){
-                    //     $('.line').remove();
-                    // } else{
-
-                    // } 
-                });
+            });
+            $('.content').click(function () {
+                 $('#collaspediv1').collapse('toggle');
             });
             function toggle_true(value, length) {
                 if (value == 1) {
