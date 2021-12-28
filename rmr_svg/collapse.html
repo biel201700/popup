@@ -53,14 +53,13 @@
     <script>
         $(document).ready(function () {
             $('.switch-button input').click(function () {
-               
+                let length = $('.line').length;
                 let value = $(this).attr("data-value");
                 let this_toggle = $(this)[0].checked;
                 let toggle_status = $('.switch-button input:checked');
 
                 if (this_toggle == true) {
                     for (var i = 0; i < toggle_status.length; i++) {
-                        let length = $('.line').length;
                         toggle_true($(toggle_status[i]).attr("data-value"), length);
                     }
                 } else {
