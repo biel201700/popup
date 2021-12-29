@@ -47,7 +47,7 @@
         </label>
         <p>산북2-2터널 양평방향</p>
     </div>
-    <div id="collaspediv1">
+    <div id="collapsecontent">
         <div class="content"></div>
     </div>
     <script>
@@ -100,16 +100,16 @@
                 // 선택한 토글의 갯수가 0이 아니면> -> 선택한 토글이 있다면?
                 // 콜랩스의 형태로 이미지 생성
                 if (toggle_status.length !== 0) {
-                    $('#collaspediv1').collapse('show');
+                    $('#collapsecontent').collapse('show');
                     // 선택한 토글이 없다면?
                     // 콜랩스의 형태로 이미지 숨김
                 } else {
-                    $('#collaspediv1').collapse('hide');
+                    $('#collapsecontent').collapse('hide');
                 }
             });
             // 이미지 클릭 시 닫힘
             $('.content').click(function () {
-                $('#collaspediv1').collapse('toggle');
+                $('#collapsecontent').collapse('toggle');
             });
             // 선택한 토글이 true라면?
             function toggle_true(data_value, image_length) {
